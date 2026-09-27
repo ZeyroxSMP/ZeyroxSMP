@@ -1,4 +1,3 @@
-```css
 * {
     margin: 0;
     padding: 0;
@@ -15,21 +14,15 @@ body {
     color: white;
 }
 
-
-/* NAVBAR */
-
 header {
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     padding: 18px 8%;
-
     background: rgba(5, 8, 6, 0.95);
     border-bottom: 1px solid #26352a;
 }
@@ -54,22 +47,14 @@ nav a:hover {
     color: #63d471;
 }
 
-
-/* HERO */
-
 .hero {
     min-height: 100vh;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     text-align: center;
-
     padding: 100px 20px;
-
-    background:
-        radial-gradient(circle at center, #203c27, #0b0f0c 65%);
+    background: radial-gradient(circle at center, #203c27, #0b0f0c 65%);
 }
 
 .hero-content {
@@ -85,7 +70,6 @@ nav a:hover {
 h1 {
     font-size: clamp(50px, 9vw, 100px);
     margin: 15px 0;
-
     text-shadow: 0 0 25px rgba(99, 212, 113, 0.5);
 }
 
@@ -95,20 +79,13 @@ h1 {
     line-height: 1.6;
 }
 
-
-/* SERVER IP */
-
 .server-box {
     margin: 30px auto 10px;
-
     max-width: 500px;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     padding: 7px;
-
     background: #151c17;
     border: 1px solid #344936;
     border-radius: 8px;
@@ -128,10 +105,8 @@ button {
 .server-box button {
     padding: 13px 20px;
     border-radius: 6px;
-
     background: #63d471;
     color: #071009;
-
     transition: 0.3s;
 }
 
@@ -144,12 +119,8 @@ button {
     min-height: 20px;
 }
 
-
-/* BUTTONS */
-
 .buttons {
     margin-top: 25px;
-
     display: flex;
     justify-content: center;
     gap: 15px;
@@ -158,12 +129,9 @@ button {
 .main-button,
 .instagram-button {
     padding: 14px 25px;
-
     border-radius: 7px;
-
     text-decoration: none;
     font-weight: bold;
-
     transition: 0.3s;
 }
 
@@ -183,9 +151,6 @@ button {
     transform: translateY(-3px);
 }
 
-
-/* SECTIONS */
-
 section {
     padding: 100px 8%;
 }
@@ -196,31 +161,20 @@ section h2 {
     margin-bottom: 50px;
 }
 
-
-/* CARDS */
-
 .cards {
     display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
+    grid-template-columns: repeat(3, 1fr);
     gap: 25px;
-
     max-width: 1100px;
     margin: auto;
 }
 
 .card {
     padding: 35px;
-
     text-align: center;
-
     background: #111712;
-
     border: 1px solid #26352a;
     border-radius: 12px;
-
     transition: 0.3s;
 }
 
@@ -243,18 +197,11 @@ section h2 {
     line-height: 1.6;
 }
 
-
-/* RULES */
-
 .rules-box {
     max-width: 700px;
-
     margin: auto;
-
     padding: 30px;
-
     background: #111712;
-
     border: 1px solid #26352a;
     border-radius: 12px;
 }
@@ -268,14 +215,9 @@ section h2 {
     border-bottom: none;
 }
 
-
-/* JOIN */
-
 .join {
     text-align: center;
-
-    background:
-        radial-gradient(circle, #18321e, #0b0f0c 70%);
+    background: radial-gradient(circle, #18321e, #0b0f0c 70%);
 }
 
 .join p {
@@ -284,29 +226,21 @@ section h2 {
 
 .big-ip {
     margin: 25px 0;
-
     font-size: 30px;
     font-weight: bold;
-
     color: #63d471;
 }
 
 .copy-button {
     padding: 15px 30px;
-
     border-radius: 7px;
-
     background: #63d471;
     color: #071009;
 }
 
-
-/* FOOTER */
-
 footer {
     text-align: center;
     padding: 50px 20px;
-
     background: #070907;
 }
 
@@ -328,11 +262,7 @@ footer a {
     font-size: 13px;
 }
 
-
-/* MOBILE */
-
 @media (max-width: 700px) {
-
     header {
         padding: 15px 5%;
     }
@@ -366,6 +296,4 @@ footer a {
     section {
         padding: 80px 6%;
     }
-
 }
-```

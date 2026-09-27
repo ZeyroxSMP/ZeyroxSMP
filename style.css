@@ -1,3 +1,7 @@
+/* ================================
+   BASIC RESET
+================================ */
+
 * {
     margin: 0;
     padding: 0;
@@ -9,28 +13,198 @@ html {
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background: #0b0f0c;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #08100a;
     color: white;
+    overflow-x: hidden;
 }
+
+
+/* ================================
+   ANIMATED BACKGROUND
+================================ */
+
+.particles {
+    position: fixed;
+    inset: 0;
+    z-index: -10;
+    pointer-events: none;
+
+    background-image:
+        radial-gradient(
+            circle,
+            rgba(99, 212, 113, 0.5) 1px,
+            transparent 1px
+        );
+
+    background-size: 55px 55px;
+
+    animation: backgroundMove 15s linear infinite;
+
+    opacity: 0.3;
+}
+
+@keyframes backgroundMove {
+
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 110px 110px;
+    }
+
+}
+
+
+/* ================================
+   FLOATING SYMBOLS
+================================ */
+
+.floating-symbol {
+    position: fixed;
+    z-index: -5;
+
+    color: rgba(99, 212, 113, 0.18);
+
+    font-size: 35px;
+
+    pointer-events: none;
+}
+
+.symbol-1 {
+    left: 8%;
+    top: 30%;
+
+    animation:
+        floatOne 7s ease-in-out infinite;
+}
+
+.symbol-2 {
+    right: 10%;
+    top: 55%;
+
+    animation:
+        floatTwo 9s ease-in-out infinite;
+}
+
+.symbol-3 {
+    left: 25%;
+    bottom: 10%;
+
+    animation:
+        floatThree 8s ease-in-out infinite;
+}
+
+@keyframes floatOne {
+
+    0%,
+    100% {
+        transform:
+            translate(0, 0)
+            rotate(0deg);
+    }
+
+    50% {
+        transform:
+            translate(30px, -40px)
+            rotate(180deg);
+    }
+
+}
+
+@keyframes floatTwo {
+
+    0%,
+    100% {
+        transform:
+            translate(0, 0)
+            rotate(0deg);
+    }
+
+    50% {
+        transform:
+            translate(-30px, 35px)
+            rotate(-180deg);
+    }
+
+}
+
+@keyframes floatThree {
+
+    0%,
+    100% {
+        transform:
+            translate(0, 0)
+            rotate(0deg);
+    }
+
+    50% {
+        transform:
+            translate(40px, -25px)
+            rotate(180deg);
+    }
+
+}
+
+
+/* ================================
+   NAVBAR
+================================ */
 
 header {
     position: fixed;
+
     top: 0;
+    left: 0;
+
     width: 100%;
+
     z-index: 1000;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     padding: 18px 8%;
-    background: rgba(5, 8, 6, 0.95);
-    border-bottom: 1px solid #26352a;
+
+    background: rgba(5, 10, 6, 0.85);
+
+    backdrop-filter: blur(12px);
+
+    border-bottom:
+        1px solid rgba(99, 212, 113, 0.15);
+
+    transition: 0.3s ease;
 }
+
+header.scrolled {
+    padding-top: 12px;
+    padding-bottom: 12px;
+
+    background:
+        rgba(5, 10, 6, 0.97);
+
+    box-shadow:
+        0 8px 30px rgba(0, 0, 0, 0.4);
+}
+
+
+/* Logo */
 
 .logo {
     font-size: 22px;
-    font-weight: bold;
+    font-weight: 800;
+
+    color: white;
 }
+
+.logo span {
+    color: #63d471;
+}
+
+
+/* Navigation */
 
 nav {
     display: flex;
@@ -39,209 +213,673 @@ nav {
 
 nav a {
     color: #ddd;
+
     text-decoration: none;
-    transition: 0.3s;
+
+    font-weight: 600;
+
+    transition:
+        color 0.25s ease;
 }
 
 nav a:hover {
     color: #63d471;
 }
 
+
+/* ================================
+   HERO
+================================ */
+
 .hero {
     min-height: 100vh;
+
     display: flex;
+
     justify-content: center;
     align-items: center;
+
     text-align: center;
-    padding: 100px 20px;
-    background: radial-gradient(circle at center, #203c27, #0b0f0c 65%);
+
+    padding:
+        120px 20px 90px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(35, 75, 42, 0.9),
+            transparent 50%
+        );
 }
 
 .hero-content {
     max-width: 850px;
 }
 
-.small-title {
+
+/* Welcome */
+
+.welcome {
     color: #63d471;
+
     letter-spacing: 5px;
-    font-weight: bold;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    margin-bottom: 10px;
+}
+
+
+/* ================================
+   VELO SMP TITLE
+================================ */
+
+.title-container {
+    position: relative;
+
+    display: inline-block;
+
+    animation:
+        titleFloat 3s ease-in-out infinite;
 }
 
 h1 {
-    font-size: clamp(50px, 9vw, 100px);
+    font-size:
+        clamp(55px, 10vw, 105px);
+
+    line-height: 1;
+
     margin: 15px 0;
-    text-shadow: 0 0 25px rgba(99, 212, 113, 0.5);
+
+    color: white;
+
+    text-shadow:
+        0 0 15px rgba(99, 212, 113, 0.3);
+
+    animation:
+        titleGlow 2s ease-in-out infinite alternate;
 }
+
+@keyframes titleFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50% {
+        transform:
+            translateY(-10px)
+            rotate(-0.5deg);
+    }
+
+}
+
+@keyframes titleGlow {
+
+    from {
+        text-shadow:
+            0 0 15px
+            rgba(99, 212, 113, 0.25);
+    }
+
+    to {
+        text-shadow:
+            0 0 45px
+            rgba(99, 212, 113, 0.75);
+    }
+
+}
+
+
+/* Sparkles */
+
+.sparkle {
+    position: absolute;
+
+    top: 25%;
+
+    color: #63d471;
+
+    font-size: 22px;
+
+    animation:
+        sparkleAnimation 1.5s ease-in-out infinite;
+}
+
+.sparkle-left {
+    left: -50px;
+}
+
+.sparkle-right {
+    right: -50px;
+
+    animation-delay: 0.7s;
+}
+
+@keyframes sparkleAnimation {
+
+    0%,
+    100% {
+        opacity: 0.2;
+
+        transform:
+            scale(0.6)
+            rotate(0deg);
+    }
+
+    50% {
+        opacity: 1;
+
+        transform:
+            scale(1.3)
+            rotate(180deg);
+
+        text-shadow:
+            0 0 20px #63d471;
+    }
+
+}
+
+
+/* ================================
+   DESCRIPTION
+================================ */
 
 .description {
-    color: #bfc7c0;
+    color: #c2cbc4;
+
     font-size: 18px;
+
     line-height: 1.6;
+
+    margin-top: 15px;
 }
 
+
+/* ================================
+   SERVER IP
+================================ */
+
 .server-box {
-    margin: 30px auto 10px;
     max-width: 500px;
+
+    margin:
+        30px auto 10px;
+
     display: flex;
+
     justify-content: space-between;
     align-items: center;
+
     padding: 7px;
-    background: #151c17;
-    border: 1px solid #344936;
+
+    background:
+        rgba(20, 30, 23, 0.95);
+
+    border:
+        1px solid #344936;
+
     border-radius: 8px;
+
+    animation:
+        serverGlow 3s ease-in-out infinite;
 }
 
 .server-box span {
     padding-left: 15px;
+
     font-weight: bold;
+
+    font-size: 16px;
 }
 
-button {
-    border: none;
-    cursor: pointer;
-    font-weight: bold;
-}
+.server-box button,
+.copy-button {
+    position: relative;
 
-.server-box button {
+    overflow: hidden;
+
     padding: 13px 20px;
+
+    border: none;
+
     border-radius: 6px;
+
     background: #63d471;
+
     color: #071009;
-    transition: 0.3s;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
-.server-box button:hover {
-    transform: scale(1.05);
+.server-box button:hover,
+.copy-button:hover {
+    transform:
+        translateY(-2px)
+        scale(1.03);
+
+    box-shadow:
+        0 8px 25px
+        rgba(99, 212, 113, 0.3);
+}
+
+@keyframes serverGlow {
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 15px
+            rgba(99, 212, 113, 0.04);
+    }
+
+    50% {
+        box-shadow:
+            0 0 30px
+            rgba(99, 212, 113, 0.15);
+    }
+
 }
 
 #copyMessage {
+    min-height: 22px;
+
     color: #63d471;
-    min-height: 20px;
+
+    font-weight: bold;
+
+    margin-top: 5px;
 }
+
+
+/* ================================
+   BUTTONS
+================================ */
 
 .buttons {
     margin-top: 25px;
+
     display: flex;
+
     justify-content: center;
+
     gap: 15px;
 }
 
 .main-button,
 .instagram-button {
     padding: 14px 25px;
+
     border-radius: 7px;
+
     text-decoration: none;
+
     font-weight: bold;
-    transition: 0.3s;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 .main-button {
     background: #63d471;
+
     color: #071009;
 }
 
 .instagram-button {
     background: #171717;
+
     color: white;
-    border: 1px solid #444;
+
+    border:
+        1px solid #444;
 }
 
 .main-button:hover,
 .instagram-button:hover {
-    transform: translateY(-3px);
+    transform:
+        translateY(-4px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(0, 0, 0, 0.3);
 }
 
+
+/* ================================
+   SECTIONS
+================================ */
+
 section {
-    padding: 100px 8%;
+    padding: 110px 8%;
+}
+
+.section-heading {
+    text-align: center;
+}
+
+.section-tag {
+    color: #63d471;
+
+    letter-spacing: 4px;
+
+    font-size: 13px;
+
+    font-weight: 800;
 }
 
 section h2 {
     text-align: center;
+
     font-size: 35px;
-    margin-bottom: 50px;
+
+    margin:
+        8px 0 50px;
 }
 
+
+/* ================================
+   CARDS
+================================ */
+
 .cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
     max-width: 1100px;
+
     margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
 }
 
 .card {
     padding: 35px;
+
     text-align: center;
-    background: #111712;
-    border: 1px solid #26352a;
+
+    background:
+        rgba(17, 25, 19, 0.92);
+
+    border:
+        1px solid #26352a;
+
     border-radius: 12px;
-    transition: 0.3s;
+
+    animation:
+        cardFloat 5s ease-in-out infinite;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.card:nth-child(2) {
+    animation-delay: 0.7s;
+}
+
+.card:nth-child(3) {
+    animation-delay: 1.4s;
 }
 
 .card:hover {
-    transform: translateY(-8px);
     border-color: #63d471;
+
+    box-shadow:
+        0 15px 40px
+        rgba(99, 212, 113, 0.1);
+}
+
+@keyframes cardFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-8px);
+    }
+
 }
 
 .icon {
-    font-size: 40px;
+    font-size: 45px;
+
     margin-bottom: 15px;
+
+    display: inline-block;
 }
 
-.card h3 {
-    margin-bottom: 12px;
+
+/* Earth */
+
+.earth {
+    animation:
+        earthAnimation 3s ease-in-out infinite;
 }
 
-.card p {
-    color: #aeb7b0;
-    line-height: 1.6;
+@keyframes earthAnimation {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg)
+            scale(1);
+    }
+
+    50% {
+        transform:
+            translateY(-10px)
+            rotate(180deg)
+            scale(1.08);
+    }
+
+    100% {
+        transform:
+            translateY(0)
+            rotate(360deg)
+            scale(1);
+    }
+
 }
+
+
+/* Sword */
+
+.sword {
+    animation:
+        swordAnimation 2s ease-in-out infinite;
+}
+
+@keyframes swordAnimation {
+
+    0%,
+    100% {
+        transform:
+            rotate(-12deg);
+    }
+
+    50% {
+        transform:
+            rotate(18deg)
+            translateY(-8px);
+    }
+
+}
+
+
+/* People */
+
+.people {
+    animation:
+        peopleAnimation 1.8s ease-in-out infinite;
+}
+
+@keyframes peopleAnimation {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-10px)
+            scale(1.08);
+    }
+
+}
+
+
+/* ================================
+   RULES
+================================ */
 
 .rules-box {
     max-width: 700px;
+
     margin: auto;
+
     padding: 30px;
-    background: #111712;
-    border: 1px solid #26352a;
+
+    background:
+        rgba(17, 25, 19, 0.92);
+
+    border:
+        1px solid #26352a;
+
     border-radius: 12px;
+
+    animation:
+        rulesGlow 4s ease-in-out infinite;
 }
 
 .rules-box p {
-    padding: 14px 0;
-    border-bottom: 1px solid #26352a;
+    padding: 15px 0;
+
+    border-bottom:
+        1px solid #26352a;
+
+    transition:
+        padding-left 0.2s ease,
+        color 0.2s ease;
 }
 
 .rules-box p:last-child {
     border-bottom: none;
 }
 
+.rules-box p:hover {
+    padding-left: 10px;
+
+    color: #63d471;
+}
+
+@keyframes rulesGlow {
+
+    0%,
+    100% {
+        box-shadow:
+            0 0 0
+            rgba(99, 212, 113, 0);
+    }
+
+    50% {
+        box-shadow:
+            0 0 35px
+            rgba(99, 212, 113, 0.08);
+    }
+
+}
+
+
+/* ================================
+   JOIN
+================================ */
+
 .join {
     text-align: center;
-    background: radial-gradient(circle, #18321e, #0b0f0c 70%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(24, 50, 30, 0.9),
+            transparent 70%
+        );
+}
+
+.join h2 {
+    margin-bottom: 15px;
+
+    animation:
+        joinFloat 3s ease-in-out infinite;
 }
 
 .join p {
-    color: #aaa;
+    color: #c2cbc4;
 }
 
 .big-ip {
     margin: 25px 0;
-    font-size: 30px;
+
+    font-size:
+        clamp(24px, 4vw, 32px);
+
     font-weight: bold;
+
     color: #63d471;
+
+    text-shadow:
+        0 0 20px
+        rgba(99, 212, 113, 0.3);
 }
 
-.copy-button {
-    padding: 15px 30px;
-    border-radius: 7px;
-    background: #63d471;
-    color: #071009;
+@keyframes joinFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-6px);
+    }
+
 }
+
+
+/* ================================
+   FOOTER
+================================ */
 
 footer {
     text-align: center;
+
     padding: 50px 20px;
-    background: #070907;
+
+    background: #050805;
+
+    border-top:
+        1px solid #182119;
 }
 
 footer h3 {
@@ -250,34 +888,44 @@ footer h3 {
 
 footer p {
     color: #999;
+
     margin: 10px 0;
 }
 
 footer a {
     color: #63d471;
+
     text-decoration: none;
 }
 
-.copyright {
-    font-size: 13px;
+footer a:hover {
+    text-decoration: underline;
 }
 
+
+/* ================================
+   MOBILE
+================================ */
+
 @media (max-width: 700px) {
+
     header {
-        padding: 15px 5%;
+        padding:
+            15px 5%;
     }
 
     nav {
         display: none;
     }
 
-    .cards {
-        grid-template-columns: 1fr;
-    }
-
     .server-box {
         flex-direction: column;
+
         gap: 10px;
+    }
+
+    .server-box span {
+        padding: 10px;
     }
 
     .server-box button {
@@ -291,9 +939,35 @@ footer a {
     .main-button,
     .instagram-button {
         width: 100%;
+
+        text-align: center;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
     }
 
     section {
-        padding: 80px 6%;
+        padding:
+            80px 6%;
     }
+
+    .sparkle {
+        display: none;
+    }
+
+}
+
+
+/* ================================
+   REDUCED MOTION
+================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+
 }

@@ -3,112 +3,254 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VeloFun SMP</title>
-    <link rel="icon" type="image/png" href="favicon.png">
+    <meta name="theme-color" content="#08100a">
+    <title>Velo SMP</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header>
-    <div class="logo">⛏ VELO SMP</div>
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#rules">Rules</a>
-        <a href="#join">Join</a>
-    </nav>
-</header>
+    <!-- Background -->
+    <div class="particles"></div>
 
-<section id="home" class="hero">
-    <div class="hero-content">
-        <p class="small-title">WELCOME TO</p>
-        <h1>VELO SMP</h1>
+    <!-- Floating symbols -->
+    <div class="floating-symbol symbol-1">◆</div>
+    <div class="floating-symbol symbol-2">✦</div>
+    <div class="floating-symbol symbol-3">▪</div>
 
-        <p class="description">
-            A Minecraft Survival Multiplayer server
-            where you can build, explore and play with friends.
+    <!-- Navigation -->
+    <header id="navbar">
+
+        <div class="logo">
+            ⛏ <span>VELO SMP</span>
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#rules">Rules</a>
+            <a href="#join">Join</a>
+        </nav>
+
+    </header>
+
+
+    <!-- Main -->
+    <main>
+
+        <!-- HOME -->
+        <section id="home" class="hero">
+
+            <div class="hero-content">
+
+                <div class="welcome">
+                    WELCOME TO
+                </div>
+
+                <div class="title-container">
+
+                    <span class="sparkle sparkle-left">✦</span>
+
+                    <h1 id="mainTitle">VELO SMP</h1>
+
+                    <span class="sparkle sparkle-right">✦</span>
+
+                </div>
+
+                <p class="description">
+                    A Minecraft Survival Multiplayer server
+                    where you can build, explore and play with friends.
+                </p>
+
+
+                <!-- Server IP -->
+                <div class="server-box">
+
+                    <span id="serverIP">
+                        velofun.mcsh.io
+                    </span>
+
+                    <button id="copyTop">
+                        COPY IP
+                    </button>
+
+                </div>
+
+                <div id="copyMessage"></div>
+
+
+                <!-- Buttons -->
+                <div class="buttons">
+
+                    <a href="#join" class="main-button">
+                        PLAY NOW
+                    </a>
+
+                    <a
+                        href="https://www.instagram.com/z.eyro.x/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="instagram-button"
+                    >
+                        📸 Instagram
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ABOUT -->
+        <section id="about">
+
+            <div class="section-heading">
+
+                <div class="section-tag">
+                    WHAT WE OFFER
+                </div>
+
+                <h2>ABOUT VELO SMP</h2>
+
+            </div>
+
+
+            <div class="cards">
+
+                <div class="card">
+
+                    <div class="icon earth">
+                        🌎
+                    </div>
+
+                    <h3>Survival</h3>
+
+                    <p>
+                        Explore the world, collect resources
+                        and build your own base.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="icon sword">
+                        ⚔️
+                    </div>
+
+                    <h3>Adventure</h3>
+
+                    <p>
+                        Fight mobs, explore new places
+                        and create your own adventure.
+                    </p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="icon people">
+                        👥
+                    </div>
+
+                    <h3>Community</h3>
+
+                    <p>
+                        Play with friends and meet
+                        other Minecraft players.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RULES -->
+        <section id="rules">
+
+            <div class="section-heading">
+
+                <div class="section-tag">
+                    PLAY FAIR
+                </div>
+
+                <h2>SERVER RULES</h2>
+
+            </div>
+
+
+            <div class="rules-box">
+
+                <p>✅ Respect other players.</p>
+
+                <p>❌ No cheating or hacking.</p>
+
+                <p>💬 Keep the chat friendly.</p>
+
+                <p>🎮 Have fun!</p>
+
+            </div>
+
+        </section>
+
+
+        <!-- JOIN -->
+        <section id="join" class="join">
+
+            <div class="section-tag">
+                START YOUR ADVENTURE
+            </div>
+
+            <h2>READY TO PLAY?</h2>
+
+            <p>
+                Copy the IP and join Velo SMP!
+            </p>
+
+            <div class="big-ip">
+                velofun.mcsh.io
+            </div>
+
+            <button id="copyBottom" class="copy-button">
+                📋 COPY SERVER IP
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <h3>⛏ VELO SMP</h3>
+
+        <p>
+            Minecraft Survival Multiplayer
         </p>
 
-        <div class="server-box">
-            <span id="serverIP">velofun.mcsh.io</span>
-            <button onclick="copyIP()">COPY IP</button>
-        </div>
+        <a
+            href="https://www.instagram.com/z.eyro.x/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            📸 Follow us on Instagram
+        </a>
 
-        <p id="copyMessage"></p>
+        <p class="copyright">
+            © 2026 Velo SMP
+        </p>
 
-        <div class="buttons">
-            <a href="#join" class="main-button">PLAY NOW</a>
+    </footer>
 
-            <a href="https://www.instagram.com/z.eyro.x/"
-               target="_blank"
-               class="instagram-button">
-                📸 Instagram
-            </a>
-        </div>
-    </div>
-</section>
 
-<section id="about">
-    <h2>ABOUT VELO SMP</h2>
-
-    <div class="cards">
-        <div class="card">
-            <div class="icon">🌎</div>
-            <h3>Survival</h3>
-            <p>Explore the world, collect resources and build your own base.</p>
-        </div>
-
-        <div class="card">
-            <div class="icon">⚔️</div>
-            <h3>Adventure</h3>
-            <p>Fight mobs, explore new places and create your own adventure.</p>
-        </div>
-
-        <div class="card">
-            <div class="icon">👥</div>
-            <h3>Community</h3>
-            <p>Play with friends and meet other Minecraft players.</p>
-        </div>
-    </div>
-</section>
-
-<section id="rules">
-    <h2>SERVER RULES</h2>
-
-    <div class="rules-box">
-        <p>✅ Respect other players.</p>
-        <p>❌ No cheating or hacking.</p>
-        <p>💬 Keep the chat friendly.</p>
-        <p>🎮 Have fun!</p>
-    </div>
-</section>
-
-<section id="join" class="join">
-    <h2>READY TO PLAY?</h2>
-
-    <p>Copy the IP and join Velo SMP!</p>
-
-    <div class="big-ip">velofun.mcsh.io</div>
-
-    <button onclick="copyIP()" class="copy-button">
-        📋 COPY SERVER IP
-    </button>
-</section>
-
-<footer>
-    <h3>⛏ VELO SMP</h3>
-    <p>Minecraft Survival Multiplayer</p>
-
-    <a href="https://www.instagram.com/z.eyro.x/"
-       target="_blank">
-        📸 Follow us on Instagram
-    </a>
-
-    <p class="copyright">© 2026 Velo SMP</p>
-</footer>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
 </html>
